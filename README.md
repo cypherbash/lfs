@@ -116,6 +116,36 @@ Execute as root user
 ```
 
 ```code
+export MAKEFLAGS='-j4'
+```
+
+```code
+cd /mnt/lfs/sources/
+```
+
+```code
+tar -xf binutils-2.41.tar.xz
+cd binutils-2.41
+mkdir -v build
+cd       build
+../configure --prefix=$LFS/tools \
+             --with-sysroot=$LFS \
+             --target=$LFS_TGT   \
+             --disable-nls       \
+             --enable-gprofng=no \
+             --disable-werror
+make
+make install
+cd ..
+rm -rf binutils-2.41
+
+```
+
+```code
+
+```
+
+```code
 
 ```
 
