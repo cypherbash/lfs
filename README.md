@@ -140,7 +140,7 @@ cd ../..
 rm -rf binutils-2.41
 
 ```
-
+tar -xf 
 ```code
 
 ```
