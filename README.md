@@ -9,6 +9,7 @@ bash version-check.sh
 ```code
 wget https://github.com/cypherbash/lfs/raw/main/version-check.sh
 sudo chmod a+x version-check.sh
+./version-check.sh
 
 sudo dpkg-reconfigure dash
 sudo apt-get install build-essential bison texinfo
