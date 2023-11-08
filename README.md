@@ -136,7 +136,7 @@ cd       build
              --disable-werror
 make
 make install
-cd ..
+cd ../..
 rm -rf binutils-2.41
 
 ```
