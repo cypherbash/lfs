@@ -69,6 +69,27 @@ esac
 mkdir -pv $LFS/tools
 ```
 
+```code
+groupadd lfs
+useradd -s /bin/bash -g lfs -m -k /dev/null lfs
+```
+
+```code
+passwd lfs
+```
+
+```code
+chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+case $(uname -m) in
+  x86_64) chown -v lfs $LFS/lib64 ;;
+esac
+```
+
+```code
+su - lfs
+```
+
+
 
 
 [Linux From Scratch Systemd Online Manual](https://www.linuxfromscratch.org/lfs/view/stable-systemd/)
