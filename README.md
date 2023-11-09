@@ -276,14 +276,39 @@ rm -v a.out
 cd .. && rm -rf glibc-2.38
 ```
 
-```code
+## 5.6. Libstdc++ from GCC-13.2.0
 
+```code
+tar -xf gcc-13.2.0.tar.xz && cd gcc-13.2.0
+```
+
+```code
+mkdir -v build && cd build
+```
+
+```code
+../libstdc++-v3/configure --host=$LFS_TGT --build=$(../config.guess) --prefix=/usr --disable-multilib --disable-nls --disable-libstdcxx-pch --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/13.2.0
+```
+
+```code
+make
+```
+
+```code
+make DESTDIR=$LFS install
+```
+
+```code
+rm -v $LFS/usr/lib/lib{stdc++,stdc++fs,supc++}.la
+```
+
+```code
+cd ../.. && rm -rf gcc-13.2.0
 ```
 
 ```code
 
 ```
-
 
 [Linux From Scratch Systemd Online Manual](https://www.linuxfromscratch.org/lfs/view/stable-systemd/)
 
