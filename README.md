@@ -19,8 +19,17 @@ bash version-check.sh
 ```
 
 ```code
-sudo su - root
+export LFS=/mnt/lfs
+nano $HOME/.bashrc
 ```
+
+
+```code
+sudo su - root
+export LFS=/mnt/lfs
+nano $HOME/.bashrc
+```
+
 ```code
 passwd
 ```
