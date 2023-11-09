@@ -195,13 +195,39 @@ cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $($LFS_TGT-gcc -print-lib
 ```
 
 ```code
-cd ../.. && rm -rf gcc-13.2.0
+cd .. && rm -rf gcc-13.2.0
 ```
+
+## 5.4. Linux-6.4.12 API Headers
+
+
+```code
+tar -xf linux-6.4.12.tar.xz && cd linux-6.4.12
+```
+
+```code
+make mrproper
+```
+
+```code
+make headers
+find usr/include -type f ! -name '*.h' -delete
+cp -rv usr/include $LFS/usr
+```
+
+```code
+cd .. && rm -rf linux-6.4.12
+```
+
+## 5.5. Glibc-2.38
 
 ```code
 
 ```
 
+```code
+
+```
 
 
 [Linux From Scratch Systemd Online Manual](https://www.linuxfromscratch.org/lfs/view/stable-systemd/)
