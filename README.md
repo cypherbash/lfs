@@ -11,8 +11,7 @@ bash version-check.sh
 ```
 
 ```code
-sudo dpkg-reconfigure dash
-sudo apt-get install build-essential bison texinfo
+sudo dpkg-reconfigure dash && sudo apt-get install build-essential bison texinfo
 ```
 
 ```code
