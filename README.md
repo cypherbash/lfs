@@ -306,9 +306,47 @@ rm -v $LFS/usr/lib/lib{stdc++,stdc++fs,supc++}.la
 cd ../.. && rm -rf gcc-13.2.0
 ```
 
+## 6.2. M4-1.4.19
+
+```code
+tar -xf m4-1.4.19.tar.xz && cd m4-1.4.19
+```
+
+```code
+./configure --prefix=/usr --host=$LFS_TGT --build=$(build-aux/config.guess)
+```
+
+```code
+make
+```
+
+```code
+make DESTDIR=$LFS install
+```
+
+```code
+cd .. && rm -rf m4-1.4.19
+```
+
 ```code
 
 ```
+
+```code
+
+```
+
+```code
+
+```
+
+```code
+
+```
+
+
+
+
 
 [Linux From Scratch Systemd Online Manual](https://www.linuxfromscratch.org/lfs/view/stable-systemd/)
 
