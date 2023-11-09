@@ -3,20 +3,30 @@
 [version-check.sh](./version-check.sh)
 
 ```code
+wget https://github.com/cypherbash/lfs/raw/main/version-check.sh && sudo chmod a+x version-check.sh
+```
+
+```code
 bash version-check.sh
 ```
 
 ```code
-wget https://github.com/cypherbash/lfs/raw/main/version-check.sh
-sudo chmod a+x version-check.sh
-./version-check.sh
-
 sudo dpkg-reconfigure dash
 sudo apt-get install build-essential bison texinfo
 ```
 
 ```code
+bash version-check.sh
+```
+
+```code
 sudo su - root
+```
+```code
+passwd
+```
+
+```code
 gdisk /dev/nvme1n1
 ```
 
@@ -25,41 +35,34 @@ mkfs -v -t ext4 /dev/nvme1n1p1
 ```
 
 ```code
-mkdir -pv $LFS
-mount -v -t ext4 /dev/nvme1n1p1 $LFS
+mkdir -pv $LFS && mount -v -t ext4 /dev/nvme1n1p1 $LFS && mkdir -v $LFS/sources && chmod -v a+wt $LFS/sources
 ```
 
 ```code
-mkdir -v $LFS/sources
+wget http://lfs.linux-sysadmin.com/lfs/downloads/12.0-systemd/wget-list && wget --input-file=wget-list --continue --directory-prefix=$LFS/sources
 ```
 
 ```code
-chmod -v a+wt $LFS/sources
+cd $LFS/sources && wget http://lfs.linux-sysadmin.com/lfs/downloads/12.0-systemd/md5sums
 ```
 
 ```code
-wget http://lfs.linux-sysadmin.com/lfs/downloads/12.0-systemd/wget-list
-wget --input-file=wget-list --continue --directory-prefix=$LFS/sources
-```
-
-```code
-wget http://lfs.linux-sysadmin.com/lfs/downloads/12.0-systemd/md5sums
 pushd $LFS/sources
   md5sum -c md5sums
 popd
 ```
 
 ```code
-chown root:root $LFS/sources/*
+chown root:root $LFS/sources/* && mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
 ```
 
 ```code
-mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
-
 for i in bin lib sbin; do
   ln -sv usr/$i $LFS/$i
 done
+```
 
+```code
 case $(uname -m) in
   x86_64) mkdir -pv $LFS/lib64 ;;
 esac
@@ -80,6 +83,9 @@ passwd lfs
 
 ```code
 chown -v lfs $LFS/{usr{,/*},lib,var,etc,bin,sbin,tools}
+```
+
+```code
 case $(uname -m) in
   x86_64) chown -v lfs $LFS/lib64 ;;
 esac
@@ -137,9 +143,12 @@ time { ../configure ../configure --prefix=$LFS/tools --with-sysroot=$LFS --targe
 cd ../.. && rm -rf binutils-2.41
 ```
 
+## 5.3. GCC-13.2.0 - Pass 1
+
 ```code
 tar -xf 
 ```
+
 
 ```code
 
