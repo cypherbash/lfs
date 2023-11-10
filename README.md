@@ -28,12 +28,17 @@ nano $HOME/.bashrc
 ```
 
 ```code
-sudo su - root && cd && passwd root
+sudo su - root
+```
+
+```code
+cd && passwd root
 ```
 
 ```code
 export LFS=/mnt/lfs
 ```
+
 ```code
 nano $HOME/.bashrc
 ```
