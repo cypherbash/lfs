@@ -1,6 +1,8 @@
 # Linux From Scratch build instructions
 
-[version-check.sh](./version-check.sh)
+```code
+sudo apt-get update && sudo apt-get dselect-upgrade --assume-yes && sudo systemctl reboot
+```
 
 ```code
 wget https://github.com/cypherbash/lfs/raw/main/version-check.sh && sudo chmod a+x version-check.sh
@@ -23,15 +25,14 @@ export LFS=/mnt/lfs
 nano $HOME/.bashrc
 ```
 
-
 ```code
-sudo su - root
-export LFS=/mnt/lfs
-nano $HOME/.bashrc
+sudo su - root && cd
+passwd root
 ```
 
 ```code
-passwd
+export LFS=/mnt/lfs
+nano $HOME/.bashrc
 ```
 
 ```code
@@ -349,4 +350,5 @@ tar xf package.tar.gz && ( cd package; ./configure && make && sudo make install 
 
 
 [Linux From Scratch Systemd Online Manual](https://www.linuxfromscratch.org/lfs/view/stable-systemd/)
+[version-check.sh](./version-check.sh)
 
