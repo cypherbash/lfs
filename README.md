@@ -329,7 +329,7 @@ cd .. && rm -rf m4-1.4.19
 ```
 
 ```code
-
+tar xf package.tar.gz && ( cd package; ./configure && make && sudo make install ) && rm package -rf
 ```
 
 ```code
