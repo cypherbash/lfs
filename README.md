@@ -190,7 +190,7 @@ mkdir -v build && cd build
 ```
 
 ```code
-time { make && make install }
+time { make && make install; }
 ```
 
 ```code
